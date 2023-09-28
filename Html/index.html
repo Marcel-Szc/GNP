@@ -5,23 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>  
-      document.addEventListener('DOMContentLoaded', function() {
-         document.querySelector('#red').onclick = function() {
-            document.querySelector('#hello').style.color = 'red';
-         }
-         document.querySelector('#blue').onclick = function() {
-            document.querySelector('#hello').style.color = 'blue';
-         }
-         document.querySelector('#green').onclick = function() {
-            document.querySelector('#hello').style.color = 'green';
-         }
-      });
+       document.addEventListener ('DOMContentLoaded', () => 
+         document.querySelectorAll('select').onchange = function() {
+            button.onclick = function() {
+               document.querySelector('#hello').style.color = this.value;
+            }
+         });
+
     </script>
 </head>
 <body>
     <h1 id="hello"> Hello! </h1>
-   <button id="red"> red </button>
-   <button id="green"> green</button>
-   <button id="blue"> blue </button>
+<select>
+     <option value="black">black</option>
+     <option value="red">red</option>
+     <option value="green">green</option>
+     <option value="blue">blue</option>
+</select>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <script>  
+           document.addEventListener('DOMContentLoaded' , function() {
+            document.querySelector('form').onsubmit = () => {
+                const task = document.querySelector('#task').value;
+            }
+           });
+    </script>
+</head>
+<body>
+   <h1> TASKS </h1>
+   <ul id="tasks">
+
+   </ul>
+   <form>
+       <input id="task" placeholder="New Task" type tex="submit">
+       <input type="submit">
+   </form>
 </body>
 </html>
